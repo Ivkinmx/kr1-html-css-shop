@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог товаров — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a class="logo" href="index.html">ShopProject</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <label for="menu-toggle" class="burger-button" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active"  href="index2.html">Каталог</a></li>
+        <li class="nav__item"><a class="nav__link" href="index3.html">О нас</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+ 
+  <main class="main-content">
+    <section class="section">
+      <h1 class="page-title">Каталог товаров</h1>
+ 
+      <!-- Фильтры и сортировка -->
+      <div class="catalog-toolbar">
+        <div class="catalog-toolbar__filter">
+          <label for="category-filter">Категория:</label>
+          <select id="category-filter" name="category">
+            <option value="all">Все категории</option>
+            <option value="electronics">Электроника</option>
+            <option value="accessories">Аксессуары</option>
+          </select>
+        </div>
+        <div class="catalog-toolbar__sort">
+          <label for="price-sort">Сортировка:</label>
+          <select id="price-sort" name="sort">
+            <option value="popular">По популярности</option>
+            <option value="asc">Сначала дешевле</option>
+            <option value="desc">Сначала дороже</option>
+          </select>
+        </div>
+      </div>
+ 
+      <!-- Сетка каталога -->
+      <div class="catalog-grid">
+        <article class="product-card">
+          <span class="product-card__badge">Новинка</span>
+          <h3 class="product-card__title">Беспроводные наушники</h3>
+          <p class="product-card__description">Качественный звук и шумоподавление до 20 часов работы.</p>
+          <p class="product-card__price">3 500 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
+        </article>
+ 
+        <article class="product-card">
+          <h3 class="product-card__title">Умные часы</h3>
+          <p class="product-card__description">Отслеживание активности, пульса и уведомлений со смартфона.</p>
+          <p class="product-card__price">5 900 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Умные часы">Заказать</button>
+        </article>
+ 
+        <article class="product-card">
+          <h3 class="product-card__title">Механическая клавиатура</h3>
+          <p class="product-card__description">RGB-подсветка, тихие переключатели и эргономичный дизайн.</p>
+          <p class="product-card__price">4 200 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
+        </article>
+ 
+        <article class="product-card">
+          <h3 class="product-card__title">Зарядная станция 3-в-1</h3>
+          <p class="product-card__description">Быстрая беспроводная зарядка для телефона, часов и наушников.</p>
+          <p class="product-card__price">2 100 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Зарядная станция">Заказать</button>
+        </article>
+      </div>
+    </section>
+  </main>
+ 
+  <footer id="contacts" class="footer">
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+</body>
+</html>
