@@ -293,9 +293,11 @@ footer {
       "products";
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg, 24px);
+}
 
   .burger-button {
     display: flex;
