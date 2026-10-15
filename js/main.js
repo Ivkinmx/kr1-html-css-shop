@@ -1,23 +1,25 @@
-// Находим элементы модального окна и кнопок
+// 1. Сначала объявляем все переменные
 const orderDialog = document.getElementById('order-dialog');
-const closeDialogButton = document.getElementById('close-order-dialog');
+const closeDialogButton = document.getElementById('close-order-dialog'); // <-- ВОТ ЭТОЙ СТРОКИ НЕ ХВАТАЛО
 const orderButtons = document.querySelectorAll('.product-card__button');
 const selectedProductInput = document.getElementById('selected-product');
 
-// Открываем модальное окно при клике на «Заказать»
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const productName = button.getAttribute('data-product');
-    if (selectedProductInput && productName) {
-      selectedProductInput.value = productName;
-    }
-    if (orderDialog) {
-      orderDialog.showModal();
-    }
+// 2. Открытие модального окна по кнопкам «Заказать»
+if (orderButtons.length > 0) {
+  orderButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const productName = button.getAttribute('data-product');
+      if (selectedProductInput && productName) {
+        selectedProductInput.value = productName;
+      }
+      if (orderDialog) {
+        orderDialog.showModal();
+      }
+    });
   });
-});
+}
 
-// Закрываем модальное окно по кнопке «Закрыть»
+// 3. Закрытие модального окна по кнопке «Закрыть»
 if (closeDialogButton && orderDialog) {
   closeDialogButton.addEventListener('click', () => {
     orderDialog.close();
