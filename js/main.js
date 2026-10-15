@@ -1,33 +1,28 @@
-const orderButtons = document.querySelectorAll('.product-card__button');
+// Находим элементы модального окна и кнопок
 const orderDialog = document.getElementById('order-dialog');
+const closeDialogButton = document.getElementById('close-order-dialog');
+const orderButtons = document.querySelectorAll('.product-card__button');
 const selectedProductInput = document.getElementById('selected-product');
 
-orderButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const productName = button.getAttribute('data-product');
-    if (selectedProductInput) selectedProductInput.value = productName;
-    if (orderDialog) orderDialog.showModal();
-  });
-});
-
-// Перебираем все кнопки «Заказать».
+// Открываем модальное окно при клике на «Заказать»
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
-
-    // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
+    const productName = button.getAttribute('data-product');
+    if (selectedProductInput && productName) {
+      selectedProductInput.value = productName;
+    }
+    if (orderDialog) {
+      orderDialog.showModal();
+    }
   });
 });
 
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
+// Закрываем модальное окно по кнопке «Закрыть»
+if (closeDialogButton && orderDialog) {
+  closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
+}
 // Получаем форму заявки.
 const orderForm = document.getElementById('order-form');
 

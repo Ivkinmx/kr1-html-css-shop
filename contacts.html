@@ -9,24 +9,27 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <div class="header__container">
-      <a class="logo" href="index.html">ShopProject</a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-      <label for="menu-toggle" class="burger-button" aria-label="Открыть меню">
-        <span></span><span></span><span></span>
-      </label>
-      <nav class="nav" aria-label="Основная навигация">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
-          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог</a></li>
-          <li class="nav__item"><a class="nav__link nav__link--active" href="contacts.html">О нас / Контакты</a></li>
-          <li class="nav__item"><a class="nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="nav__item"><a class="nav__link" href="index.html#popular">Товары</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li class="site-nav__item">
+          <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="catalog.html">Каталог</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="contacts.html">Контакты</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="#popular">Популярные товары</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
  
   <main class="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
