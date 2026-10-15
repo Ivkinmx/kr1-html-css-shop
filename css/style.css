@@ -260,11 +260,13 @@ main {
 /* ===============================
    9. Блоки: order-dialog & order-form
    =============================== */
+/* Модальное окно */
 .order-dialog {
   width: min(100% - 32px, 560px);
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
 }
 
 .order-dialog::backdrop {
@@ -273,25 +275,55 @@ main {
 
 .order-dialog__title {
   margin-top: 0;
+  margin-bottom: var(--space-md);
 }
 
+/* Форма в модальном окне */
 .order-form__field {
   margin-bottom: var(--space-md);
 }
 
 .order-form__label {
-  display: block;
+  display: block; /* Переносит подпись на отдельную строку */
   margin-bottom: var(--space-xs);
+  font-weight: bold;
 }
 
 .order-form__input,
 .order-form__select,
 .order-form__textarea {
-  width: 100%;
+  width: 100%; /* Растягивает поля на всю ширину окна */
   padding: 10px 12px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
+  background-color: var(--color-bg);
+}
+
+.order-form__input:focus-visible,
+.order-form__select:focus-visible,
+.order-form__textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.order-form__hint {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.order-form__field--checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.order-form__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .order-form__actions {
@@ -299,7 +331,6 @@ main {
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
-
 /* ===============================
    10. Блок: site-footer
    =============================== */
