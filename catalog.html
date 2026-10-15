@@ -28,36 +28,38 @@
     </div>
   </header>
  
-  <main class="main-content">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
-    </nav>
+ <main class="main-content">
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="index.html">Главная</a>
+    <span>Каталог</span>
+  </nav>
 
-    <section class="section">
-      <h1 class="page-title">Каталог товаров</h1>
- 
-      <!-- Фильтры и каталог -->
-      <div class="catalog-toolbar">
-        <div class="catalog-toolbar__filter">
-          <label for="category-filter">Категория:</label>
-          <select id="category-filter" name="category">
-            <option value="all">Все категории</option>
-            <option value="electronics">Электроника</option>
-            <option value="accessories">Аксессуары</option>
-          </select>
-        </div>
-        <div class="catalog-toolbar__sort">
-          <label for="price-sort">Сортировка:</label>
-          <select id="price-sort" name="sort">
-            <option value="popular">По популярности</option>
-            <option value="asc">Сначала дешевле</option>
-            <option value="desc">Сначала дороже</option>
-          </select>
-        </div>
-      </div>
- 
-      <div class="catalog-grid">
+  <section class="catalog-layout">
+    <!-- Боковой блок фильтров -->
+    <aside class="catalog-filters">
+      <h2>Фильтры</h2>
+      <form class="filters-form" action="#" method="get">
+        <fieldset>
+          <legend>Категория</legend>
+          <label><input type="checkbox" name="category" value="all"> Все товары</label>
+          <label><input type="checkbox" name="category" value="popular"> Популярные</label>
+          <label><input type="checkbox" name="category" value="new"> Новинки</label>
+        </fieldset>
+        <fieldset>
+          <legend>Цена</legend>
+          <label for="price-from">От</label>
+          <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+          <label for="price-to">До</label>
+          <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+        </fieldset>
+        <button class="button" type="submit">Применить</button>
+      </form>
+    </aside>
+
+    <!-- Основной список товаров -->
+    <section class="catalog-products">
+      <h2>Список товаров</h2>
+      <div class="products-grid">
         <article class="product-card">
           <span class="product-card__badge">Новинка</span>
           <h3 class="product-card__title">Беспроводные наушники</h3>
@@ -65,30 +67,11 @@
           <p class="product-card__price">3 500 руб.</p>
           <button class="button product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
         </article>
- 
-        <article class="product-card">
-          <h3 class="product-card__title">Умные часы</h3>
-          <p class="product-card__description">Отслеживание активности, пульса и уведомлений со смартфона.</p>
-          <p class="product-card__price">5 900 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Умные часы">Заказать</button>
-        </article>
- 
-        <article class="product-card">
-          <h3 class="product-card__title">Механическая клавиатура</h3>
-          <p class="product-card__description">RGB-подсветка, тихие переключатели и эргономичный дизайн.</p>
-          <p class="product-card__price">4 200 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
-        </article>
- 
-        <article class="product-card">
-          <h3 class="product-card__title">Зарядная станция 3-в-1</h3>
-          <p class="product-card__description">Быстрая беспроводная зарядка для телефона, часов и наушников.</p>
-          <p class="product-card__price">2 100 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Зарядная станция">Заказать</button>
-        </article>
+        <!-- Дополнительные карточки -->
       </div>
     </section>
-  </main>
+  </section>
+</main>
  
   <footer id="contacts" class="footer">
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
