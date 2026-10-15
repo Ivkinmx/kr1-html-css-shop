@@ -3,7 +3,7 @@ const orderDialog = document.getElementById('order-dialog');
 const closeDialogButton = document.getElementById('close-order-dialog'); // <-- ВОТ ЭТОЙ СТРОКИ НЕ ХВАТАЛО
 const orderButtons = document.querySelectorAll('.product-card__button');
 const selectedProductInput = document.getElementById('selected-product');
-
+const closeDialogIcon = document.getElementById('close-order-dialog-icon');
 // 2. Открытие модального окна по кнопкам «Заказать»
 if (orderButtons.length > 0) {
   orderButtons.forEach((button) => {
@@ -22,6 +22,11 @@ if (orderButtons.length > 0) {
 // 3. Закрытие модального окна по кнопке «Закрыть»
 if (closeDialogButton && orderDialog) {
   closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
+}
+if (closeDialogIcon && orderDialog) {
+  closeDialogIcon.addEventListener('click', () => {
     orderDialog.close();
   });
 }
