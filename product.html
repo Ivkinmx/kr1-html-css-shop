@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Товар 1</span>
+    </nav>
+
+    <article class="product-detail">
+      <h1 class="page-title">Учебный товар №1</h1>
+      <p class="product-detail__description">
+        Подробное описание товара. Включает основные свойства, функционал и информацию о гарантийном обслуживании.
+      </p>
+      
+      <p class="product-card__price">Цена: 1 000 руб.</p>
+      <button class="button button--primary product-card__button" type="button" data-product="Учебный товар №1">
+        Заказать товар
+      </button>
+
+      <section class="section">
+        <h2>Технические характеристики</h2>
+        <table class="tech-table">
+          <caption>Спецификация и параметры товара</caption>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Категория</td>
+              <td>Учебный товар</td>
+            </tr>
+            <tr>
+              <td>Артикул</td>
+              <td>SP-10024</td>
+            </tr>
+            <tr>
+              <td>Наличие</td>
+              <td>В наличии на складе</td>
+            </tr>
+            <tr>
+              <td>Гарантия</td>
+              <td>12 месяцев</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 ShopProject. Все права защищены.</p>
+  </footer>
+
+  <a href="#" class="scroll-top" title="Наверх" aria-label="Вернуться к началу">↑</a>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <button class="order-dialog__close-icon" type="button" id="close-order-dialog-icon" aria-label="Закрыть окно">×</button>
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя *</label>
+        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" required>
+      </div>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail *</label>
+        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" required>
+      </div>
+      <input type="hidden" id="selected-product" name="selected-product" value="">
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
